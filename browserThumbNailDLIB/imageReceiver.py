@@ -16,7 +16,7 @@ detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 flag = False
 
-def detectFacesAndGetData(img):
+def detectFaces(img):
     dets = detector(img, 1)
     print("Number of faces detected: {}".format(len(dets)))
     for k, d in enumerate(dets):

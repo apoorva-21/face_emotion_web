@@ -32,7 +32,7 @@ var sendBase64ToServer = function(name, base64){
             contentType : 'application/json',
             type: 'POST',
             success: function(response) {
-                console.log(response.msg);
+                alert(response.emotion);
             },
             error: function(error) {
                 alert(error);
