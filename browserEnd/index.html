@@ -1,0 +1,43 @@
+<!DOCTYPE = html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+<style>
+	
+	#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+#captureButton{
+	position: relative;
+    top: 50px;
+    left: 420px;
+    right: -420px;
+    bottom: -191px;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+    <p id = 'testing'></p>
+<div id="container">
+    <video autoplay="true" id="videoElement">
+    </video>
+</div>
+<div id = "thumbs"></div>
+<button id = 'captureButton' onClick = 'generateThumbnail()'>Capture</button>
+<script src = "thumbnailLiveVideo.js"></script>
+</body>
+</html>

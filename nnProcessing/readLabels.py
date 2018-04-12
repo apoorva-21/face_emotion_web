@@ -2,7 +2,7 @@ import numpy as np
 import os
 import cv2
 
-LABELS_FILE = './labels.txt'
+LABELS_FILE = './dataset/labels.txt'
 IMAGES_DIR = './jaffeCleaned/data'
 labels = []
 with open(LABELS_FILE, 'rb') as f:

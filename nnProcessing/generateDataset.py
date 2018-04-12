@@ -6,7 +6,7 @@ from imutils import face_utils
 import pickle
 
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
+predictor = dlib.shape_predictor('../facialLandmarkData/shape_predictor_68_face_landmarks.dat')
 flag = False
 
 def getFiducialPointsData(imagePath):
@@ -39,7 +39,7 @@ def getFiducialPointsData(imagePath):
 		return faceVector
 
 
-LABELS_FILE = './labels.txt'
+LABELS_FILE = './dataset/labels.txt'
 IMAGES_DIR = './jaffeCleaned/data'
 labels = []
 with open(LABELS_FILE, 'rb') as f:
@@ -63,6 +63,6 @@ for item in items:
 		oneHotLabel = np.array(oneHotLabel)
 		ds.append(np.hstack([dataItem,oneHotLabel]))
 print "DATASET CREATED! Shape of Samples = {}".format(np.array(ds).shape)
-with open('faceDataset.pickle', 'wb') as f:
+with open('./dataset/faceDataset.pickle', 'wb') as f:
 	pickle.dump(np.array(ds), f)
-print 'Saved as faceDataset.pickle!'
+print 'Saved as ./dataset/faceDataset.pickle!'

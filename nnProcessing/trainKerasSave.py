@@ -41,11 +41,18 @@ model = Sequential([
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
-
-model.fit(X_train, y_train, epochs = 100, batch_size = 32, validation_data = (X_test, y_test))
-print model.predict(np.reshape(X_train[0], (1, 136)))
-# model.save('model.h5')
-with open('model1.pickle','wb') as f:
-	pickle.dump(model)
-tf.keras.backend.clear_session()
+N_EPOCHS = 1500
+model.fit(X_train, y_train, epochs = N_EPOCHS, batch_size = 32, validation_data = (X_test, y_test))
+model_json = model.to_json()
+with open("../trainedModels/model{}.json".format(N_EPOCHS), "wb") as json_file:
+    json_file.write(model_json)
+# serialize weights to HDF5
+model.save_weights("../trainedModels/model{}.h5".format(N_EPOCHS))
+print("Saved model to disk")
+ 
+# later...
+ 
+# print model.predict(np.reshape(X_train[0], (1, 136)))
+#model.save('model.h5')
+#tf.keras.backend.clear_session()
 print 'model saved!'
