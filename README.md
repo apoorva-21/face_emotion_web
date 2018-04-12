@@ -12,3 +12,7 @@ Emotion recognition is one of the most critical tasks that must be achieved robu
 -Medical Research in psychology
 -Medical Research pertaining to the effect of drugs, infections and disorders on the behavior of a person
 -Product recommendations can also be made effective
+
+Dataset Used: JAFFE, a concise dataset for facial expressions corresponding to emotions : http://www.kasrl.org/jaffe.html
+
+Tip : Run the fwdPropOnRcvdImg.py script if using Theano backend, since a TF backend gives errors.
